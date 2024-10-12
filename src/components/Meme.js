@@ -2,12 +2,21 @@ import {useState} from 'react';
 import memesData from '../memesData';
 
 export default function Meme() {
-    const [memeImage, setMemeImage] = useState('')
+    const [meme, setMeme] = useState({
+        topText: '',
+        bottomText: '',
+        randomImage: 'https://i.imgflip.com/22bdq6.jpg'
+    })
+    const [allMemeImages, setAllMemeImages] = useState(memesData)
 
     function getMemeImage() {
-        const memesArray = memesData.data.memes
+        const memesArray = allMemeImages.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
-        setMemeImage(memesArray[randomNumber].url)
+        const url = memesArray[randomNumber].url
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            randomImage: url
+        }))
     }
 
     return (
@@ -16,14 +25,14 @@ export default function Meme() {
                 <label className="form-label">Top Text <br/>
                     <input
                         type='text'
-                        placeholder='one does not simply'
+                        placeholder='trans rights'
                         className='form-input'
                     />
                 </label>
                 <label className='form-label'>Bottom Text <br />
                     <input
                         type='text'
-                        placeholder='create a new meme'
+                        placeholder='Labour party'
                         className='form-input'
                     />
                 </label>
@@ -35,7 +44,7 @@ export default function Meme() {
                 </button>
             </section>
             <img
-                src={memeImage}
+                src={meme.randomImage}
                 alt='meme image'
                 className='meme-img'
             />
