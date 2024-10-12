@@ -80,3 +80,8 @@ main {
   grid-column: 1 / -1;
   padding: 10px;
 }
+
+.meme-img {
+  width: 100%;
+  margin: 16px auto;
+}

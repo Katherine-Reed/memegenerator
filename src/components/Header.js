@@ -2,7 +2,7 @@ export default function Header() {
     return (
         <header className='header'>
             <img
-                src='https://placehold.co/40'
+                src='./troll-face.png'
                 alt='troll head meme'
                 className='header-img'
             />
