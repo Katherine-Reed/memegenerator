@@ -65,7 +65,7 @@ export default function Meme() {
                 </button>
             </section>
             <section className="meme">
-                <img src={meme.randomImage} className="meme-img" alt='meme image'/>
+                <img src={meme.randomImage} className="meme-img" alt='meme'/>
                 <h2 className="meme-text top">{meme.topText}</h2>
                 <h2 className="meme-text bottom">{meme.bottomText}</h2>
             </section>
