@@ -89,7 +89,7 @@ main {
 
 .meme-img {
   border-radius: 3px;
-  max-width: 100%;
+  width: 100%;
 }
 
 .meme-text {
