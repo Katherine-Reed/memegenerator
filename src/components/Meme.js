@@ -19,6 +19,14 @@ export default function Meme() {
         }))
     }
 
+    function handleChange(event) {
+        const {name, value} = event.target
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            [name]: value
+        }))
+    }
+
     return (
         <main>
             <section className='form'>
@@ -27,13 +35,19 @@ export default function Meme() {
                         type='text'
                         placeholder='trans rights'
                         className='form-input'
+                        name='topText'
+                        value={meme.topText}
+                        onChange={handleChange}
                     />
                 </label>
                 <label className='form-label'>Bottom Text <br />
                     <input
                         type='text'
-                        placeholder='Labour party'
+                        placeholder='Labour policy'
                         className='form-input'
+                        name='bottomText'
+                        value={meme.bottomText}
+                        onChange={handleChange}
                     />
                 </label>
                 <button
@@ -43,11 +57,11 @@ export default function Meme() {
                     Get new meme image 🖼
                 </button>
             </section>
-            <img
-                src={meme.randomImage}
-                alt='meme image'
-                className='meme-img'
-            />
+            <section className="meme">
+                <img src={meme.randomImage} className="meme-img" />
+                <h2 className="meme-text top">{meme.topText}</h2>
+                <h2 className="meme-text bottom">{meme.bottomText}</h2>
+            </section>
         </main>
     )
 }

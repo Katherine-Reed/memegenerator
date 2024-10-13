@@ -64,8 +64,9 @@ main {
 
 .form-input:focus-visible, .form-btn:focus-visible {
   border: none;
-  box-shadow: 0 0 5px 2px rgba(138,43,226,1),
-              0 0 10px 3px rgba(255,20,147,1);
+  box-shadow: 
+    0 0 5px 2px rgba(138,43,226,1),
+    0 0 10px 3px rgba(255,20,147,1);
 }
 
 .form-btn {
@@ -81,7 +82,45 @@ main {
   padding: 10px;
 }
 
+.meme {
+  margin-top: 16px;
+  position: relative;
+}
+
 .meme-img {
-  width: 100%;
-  margin: 16px auto;
+  border-radius: 3px;
+  max-width: 100%;
+}
+
+.meme-text {
+  color: white;
+  font-family: impact, sans-serif;
+  font-size: 2em;
+  left: 50%;
+  letter-spacing: 1px;
+  margin: 15px 0;
+  padding: 0 5px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow:
+    2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    0 2px 0 #000,
+    2px 0 0 #000,
+    0 -2px 0 #000,
+    -2px 0 0 #000,
+    2px 2px 5px #000;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.top {
+  top: 0;
 }
